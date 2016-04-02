@@ -55,7 +55,7 @@ local DefaultIdlescreen = [[
 	<img src="asset://mapimage/gm_construct" class="background">
 	<div class="content">
 	  <h1>No media playing</h1>
-	  <p>Hold %s while looking at the media player to reveal the queue menu.</p>
+	  <p>Press F8 while looking at the TV to toggle the queue menu.</p>
 	</div>
 </body>
 </html>

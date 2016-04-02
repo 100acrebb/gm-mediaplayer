@@ -225,6 +225,35 @@ hook.Add( "OnContextMenuClose", "MP.HideSidebar", function()
 	MediaPlayer.HideSidebar()
 end )
 
+
+if CLIENT then
+
+	--// FKEY command \\--
+	local keytoggledown = false
+	local isshowing = false
+	function TV_ButtonThink()
+		
+			if input.IsKeyDown( KEY_F8 ) then
+				if keytoggledown then return end
+				keytoggledown = true
+				
+				if isshowing then
+					isshowing = false
+					MediaPlayer.HideSidebar()
+				else
+					isshowing = true
+					MediaPlayer.ShowSidebar()
+				end
+			else
+				keytoggledown = false
+			end
+		
+	end
+	hook.Add("Think", "TV_ButtonThink", TV_ButtonThink )
+
+
+end
+
 --[[--------------------------------------------
 	Sidebar UI test - remove this eventually
 ----------------------------------------------]]
