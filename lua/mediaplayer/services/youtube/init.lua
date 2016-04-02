@@ -92,6 +92,14 @@ local function OnReceiveMetadata( self, callback, body )
 		metadata.duration = 0 -- mark as live video
 	end
 
+	
+	local ytRating = TableLookup( item, 'contentDetails.contentRating.ytRating')
+	if ytRating == "ytAgeRestricted" then
+		return callback( false, "Requested video is age-restricted." )
+	end
+	
+	
+
 	-- 'medium' size thumbnail doesn't have letterboxing
 	metadata.thumbnail = TableLookup(item, 'snippet.thumbnails.medium.url')
 

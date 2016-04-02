@@ -28,6 +28,7 @@ function ENT:Use(ply)
 		mp:RemoveListener(ply)
 	else
 		mp:AddListener(ply)
+		ply:ChatPrint( "Use F8 while looking at screen to toggle queue menu." )
 	end
 
 	ply.NextUse = CurTime() + self.UseDelay

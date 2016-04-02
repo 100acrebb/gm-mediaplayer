@@ -318,6 +318,13 @@ function MEDIAPLAYER:RequestMedia( media, ply )
 				msg and msg or "The requested media couldn't be queued." )
 			return
 		end
+		
+		print("22 - Duration", media:Duration())
+		if media:Duration() > 20 * 60 then
+			self:NotifyPlayer( ply,
+				"The requested media exceeds the maximum duration" )
+			return 
+		end
 
 		-- Add the media to the queue
 		self:AddMedia( media )

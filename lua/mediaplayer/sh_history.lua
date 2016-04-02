@@ -64,6 +64,7 @@ function MediaPlayer.History:LogRequest( media )
 		end
 	end
 
+	ServerLog("[VIDEO] " ..ply:Nick() .. ", " .. ply:SteamID().. ", " ..media:Title().. ", " ..media:Url() .. ", " .. media:Duration() .. "\n")
 	return result
 end
 
