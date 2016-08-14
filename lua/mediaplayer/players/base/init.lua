@@ -320,9 +320,9 @@ function MEDIAPLAYER:RequestMedia( media, ply )
 		end
 		
 		print("22 - Duration", media:Duration())
-		if media:Duration() > 20 * 60 then
+		if media:Duration() > 20 * 60 or media:Duration() < 10 then
 			self:NotifyPlayer( ply,
-				"The requested media exceeds the maximum duration" )
+				"The requested media exceeds the min/max duration" )
 			return 
 		end
 

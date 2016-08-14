@@ -104,19 +104,19 @@ do
 		"youtube",
 		"googledrive",
 		"twitch",
-		"twitchstream",
+		-- "twitchstream",
 		"vimeo",
 
 		-- HTML Resources
 		"resource", -- base
 		"image",
 		"html5_video",
-		"webpage",
+		"webpage"
 
 		-- IGModAudioChannel
-		"audiofile",
-		"shoutcast",
-		"soundcloud"
+		--"audiofile",
+		--"shoutcast",
+		--"soundcloud"
 	}
 
 	for _, name in ipairs(services) do
